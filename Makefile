@@ -81,7 +81,7 @@ testmem: $(OUT_DIR) analisamem
 
 # generates exe file, executes gprof, and generates perf log
 all: 
-	@make -s clean bin testexec analisamem testmem plot
+	@make -s clean bin_dir obj_dir bin testexec analisamem testmem plot
 
 
 
@@ -128,6 +128,14 @@ valgrind:
 out:
 	@if test -d $(OUT_DIR); then rm -rf $(OUT_DIR); fi
 	@mkdir $(OUT_DIR)
+
+# makes bin dir
+bin_dir:
+	@mkdir $(BIN_DIR)
+
+# makes obj dir
+obj_dir:
+	@mkdir $(OBJ_DIR)
 
 
 
